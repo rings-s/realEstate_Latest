@@ -9,7 +9,6 @@ urlpatterns = [
     path('api/properties/', include('properties.urls')),
     path('api/tenants/', include('tenants.urls')),
     path('api/analytics/', include('dashboard.urls')),
-    path('api/store/', include('store.urls')),
     path('api/subscriptions/', include('subscriptions.urls')),
     path('api/notifications/', include('notifications.urls')),
     path('api/payments/', include('payments.urls')),

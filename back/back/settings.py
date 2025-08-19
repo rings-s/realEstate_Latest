@@ -207,6 +207,47 @@ CHANNEL_LAYERS = {
     },
 }
 
+
+# Property Settings
+PROPERTY_SETTINGS = {
+    'MAX_IMAGES_PER_PROPERTY': 20,
+    'MAX_DOCUMENT_SIZE_MB': 10,
+    'ENABLE_3D_TOURS': True,
+    'ENABLE_VIRTUAL_TOURS': True,
+    'DEFAULT_MAP_CENTER': [24.7136, 46.6753],  # Riyadh coordinates
+    'DEFAULT_MAP_ZOOM': 11,
+    'SEARCH_RADIUS_OPTIONS': [1, 2, 5, 10, 20, 50],  # km
+}
+
+# Auction Settings
+AUCTION_SETTINGS = {
+    'MIN_BID_INCREMENT': 100,
+    'AUTO_EXTEND_MINUTES': 5,
+    'DEPOSIT_PERCENTAGE': 5,
+    'MAX_AUTO_BIDS_PER_USER': 10,
+}
+
+# Tenant Settings
+TENANT_SETTINGS = {
+    'ENABLE_TENANT_SCREENING': True,
+    'REQUIRE_DOCUMENT_VERIFICATION': True,
+    'LATE_PAYMENT_GRACE_PERIOD_DAYS': 5,
+    'ENABLE_TENANT_PORTAL': True,
+    'ENABLE_ONLINE_RENT_PAYMENT': True,
+}
+
+# Cache settings for better performance
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+        'TIMEOUT': 300,
+    }
+}
+
 # Custom User Model
 AUTH_USER_MODEL = 'accounts.User'
 
